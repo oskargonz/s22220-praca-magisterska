@@ -1,0 +1,21 @@
+[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\target\scala-2.12\classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Bracklets.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	NotUsingNulls.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UseOption.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Bracklets$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MutableVariables.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ImmutableVariables.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MixedParadigmatic.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UseOption$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MixedParadigmatic$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MapExample$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ImmutableVariables$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	NotUsingNulls$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MapExample.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MutableVariables$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\target\scala-2.12\classes.bak[0m

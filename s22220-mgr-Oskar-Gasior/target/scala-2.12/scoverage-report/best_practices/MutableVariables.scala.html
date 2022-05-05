@@ -1,0 +1,268 @@
+<html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title id="title">
+          best_practices\MutableVariables.scala.html
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.20.1/css/theme.default.min.css" type="text/css"/><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.20.1/js/jquery.tablesorter.min.js"></script><link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" type="text/css"/><script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script><script type="text/javascript">
+        $(document).ready(function() {$(".tablesorter").tablesorter();});
+      </script>
+        <style>
+          table.codegrid { font-family: monospace; font-size: 12px; width: auto!important; }table.statementlist { width: auto!important; font-size: 13px; } table.codegrid td { padding: 0!important; border: 0!important } table td.linenumber { width: 40px!important; } 
+        </style>
+      </head>
+      <body style="font-family: monospace;">
+        <ul class="nav nav-tabs">
+          <li>
+            <a href="#codegrid" data-toggle="tab">Codegrid</a>
+          </li>
+          <li>
+            <a href="#statementlist" data-toggle="tab">Statement List</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="codegrid">
+            <pre style='font-size: 12pt; font-family: courier, monospace;'>1 <span style=''>package best_practices
+</span>2 <span style=''>
+</span>3 <span style=''>object MutableVariables {
+</span>4 <span style=''>  /**
+</span>5 <span style=''>   * Below example shows problems with mutable variables.
+</span>6 <span style=''>   *
+</span>7 <span style=''>   * Input: foo(1)
+</span>8 <span style=''>   * Output: res0: Int = 1
+</span>9 <span style=''>   *
+</span>10 <span style=''>   * Input: foo(1)
+</span>11 <span style=''>   * Output: res0: Int = 2
+</span>12 <span style=''>   * */
+</span>13 <span style=''>  var i: Int = </span><span style='background: #F0ADAD'>0</span><span style=''>
+</span>14 <span style=''>  def foo(j: Int): Int = {
+</span>15 <span style=''>    </span><span style='background: #F0ADAD'>i += j</span><span style=''>
+</span>16 <span style=''>    </span><span style='background: #F0ADAD'>i</span><span style=''>
+</span>17 <span style=''>  }
+</span>18 <span style=''>
+</span>19 <span style=''>  /**
+</span>20 <span style=''>   * Exception to the rule of not using mutable variables.
+</span>21 <span style=''>   *
+</span>22 <span style=''>   * @param list list of Integers.
+</span>23 <span style=''>   * @return Sum of elements in list.
+</span>24 <span style=''>   */
+</span>25 <span style=''>  def sum(list: List[Int]): Int = {
+</span>26 <span style=''>    var s = </span><span style='background: #F0ADAD'>0</span><span style=''>
+</span>27 <span style=''>    </span><span style='background: #F0ADAD'>for(i &lt;- list) s += i</span><span style=''>
+</span>28 <span style=''>    s
+</span>29 <span style=''>  }
+</span>30 <span style=''>
+</span>31 <span style=''>  /**
+</span>32 <span style=''>   * More clean implementation of above function.
+</span>33 <span style=''>   *
+</span>34 <span style=''>   * @param list list of Integers.
+</span>35 <span style=''>   * @return Sum of elements in list.
+</span>36 <span style=''>   */
+</span>37 <span style=''>  def sum2(list: List[Int]): Int = </span><span style='background: #F0ADAD'>list.sum</span><span style=''>
+</span>38 <span style=''>}
+</span></pre>
+          </div>
+          <div class="tab-pane" id="statementlist">
+            <table cellspacing="0" cellpadding="0" class="table statementlist">
+      <tr>
+        <th>Line</th>
+        <th>Stmt Id</th>
+        <th>Pos</th>
+        <th>Tree</th>
+        <th>Symbol</th>
+        <th>Code</th>
+      </tr><tr>
+        <td>
+          13
+        </td>
+        <td>
+          47
+        </td>
+        <td>
+          251
+          -
+          252
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          0
+        </td>
+      </tr><tr>
+        <td>
+          15
+        </td>
+        <td>
+          49
+        </td>
+        <td>
+          286
+          -
+          292
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          best_practices.MutableVariables.i_=
+        </td>
+        <td style="background: #F0ADAD">
+          MutableVariables.this.i_=(MutableVariables.this.i.+(j))
+        </td>
+      </tr><tr>
+        <td>
+          15
+        </td>
+        <td>
+          48
+        </td>
+        <td>
+          286
+          -
+          292
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.+
+        </td>
+        <td style="background: #F0ADAD">
+          MutableVariables.this.i.+(j)
+        </td>
+      </tr><tr>
+        <td>
+          16
+        </td>
+        <td>
+          50
+        </td>
+        <td>
+          298
+          -
+          299
+        </td>
+        <td>
+          Select
+        </td>
+        <td>
+          best_practices.MutableVariables.i
+        </td>
+        <td style="background: #F0ADAD">
+          MutableVariables.this.i
+        </td>
+      </tr><tr>
+        <td>
+          26
+        </td>
+        <td>
+          51
+        </td>
+        <td>
+          512
+          -
+          513
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          0
+        </td>
+      </tr><tr>
+        <td>
+          27
+        </td>
+        <td>
+          53
+        </td>
+        <td>
+          519
+          -
+          540
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.immutable.List.foreach
+        </td>
+        <td style="background: #F0ADAD">
+          list.foreach[Unit](((i: Int) =&gt; s = s.+(i)))
+        </td>
+      </tr><tr>
+        <td>
+          27
+        </td>
+        <td>
+          52
+        </td>
+        <td>
+          534
+          -
+          540
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.+
+        </td>
+        <td style="background: #F0ADAD">
+          s.+(i)
+        </td>
+      </tr><tr>
+        <td>
+          37
+        </td>
+        <td>
+          55
+        </td>
+        <td>
+          737
+          -
+          745
+        </td>
+        <td>
+          ApplyToImplicitArgs
+        </td>
+        <td>
+          scala.collection.TraversableOnce.sum
+        </td>
+        <td style="background: #F0ADAD">
+          list.sum[Int](math.this.Numeric.IntIsIntegral)
+        </td>
+      </tr><tr>
+        <td>
+          37
+        </td>
+        <td>
+          54
+        </td>
+        <td>
+          742
+          -
+          742
+        </td>
+        <td>
+          Select
+        </td>
+        <td>
+          scala.math.Numeric.IntIsIntegral
+        </td>
+        <td style="background: #F0ADAD">
+          math.this.Numeric.IntIsIntegral
+        </td>
+      </tr>
+    </table>
+          </div>
+        </div>
+      </body>
+    </html>

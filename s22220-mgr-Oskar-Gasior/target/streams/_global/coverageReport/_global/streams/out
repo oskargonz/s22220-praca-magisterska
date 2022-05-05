@@ -1,0 +1,11 @@
+[0m[[0m[0minfo[0m] [0m[0mWaiting for measurement data to sync...[0m
+[0m[[0m[0minfo[0m] [0m[0mReading scoverage instrumentation [D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\target\scala-2.12\scoverage-data\scoverage.coverage][0m
+[0m[[0m[0minfo[0m] [0m[0mReading scoverage measurements...[0m
+[0m[[0m[0minfo[0m] [0m[0mGenerating scoverage reports...[0m
+[0m[[0m[0minfo[0m] [0m[0mWritten Cobertura report [D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\target\scala-2.12\coverage-report/cobertura.xml][0m
+[0m[[0m[0minfo[0m] [0m[0mWritten XML coverage report [D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\target\scala-2.12\scoverage-report/scoverage.xml][0m
+[0m[[0m[0minfo[0m] [0m[0mWritten HTML coverage report [D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\target\scala-2.12\scoverage-report/index.html][0m
+[0m[[0m[0minfo[0m] [0m[0mStatement coverage.: 3.33%[0m
+[0m[[0m[0minfo[0m] [0m[0mBranch coverage....: 0.00%[0m
+[0m[[0m[0minfo[0m] [0m[0mCoverage reports completed[0m
+[0m[[0m[0minfo[0m] [0m[0mAll done. Coverage was [3.33%][0m

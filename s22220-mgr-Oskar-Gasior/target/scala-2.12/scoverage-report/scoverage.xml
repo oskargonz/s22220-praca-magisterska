@@ -1,0 +1,263 @@
+<scoverage 
+statement-count="60" statements-invoked="2" statement-rate="3.33" branch-rate="0.00" version="1.0" timestamp="1649958819563">
+    <packages>
+        <package name="&lt;empty&gt;" statement-count="44" statements-invoked="0" statement-rate="0.00">
+            <classes>
+                <class 
+                name="Main" filename="Main.scala" statement-count="44" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                    <methods>
+                        <method 
+                        name="&lt;empty&gt;/Main/main" statement-count="44" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                            <statements>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1016" end="1072" line="24" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1558" end="1611" line="35" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="2110" end="2127" line="49" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="776" end="814" line="19" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="536" end="572" line="14" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1630" end="1670" line="37" branch="true" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="2183" end="2212" line="51" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1101" end="1144" line="25" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="723" end="733" line="18" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1187" end="1310" line="28" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1999" end="2056" line="47" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="965" end="1002" line="23" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="485" end="495" line="13" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="477" end="522" line="13" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="715" end="762" line="18" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="2110" end="2118" line="49" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="485" end="521" line="13" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="723" end="761" line="18" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1030" end="1072" line="24" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1566" end="1610" line="35" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="789" end="814" line="19" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="549" end="572" line="14" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="2076" end="2127" line="48" branch="true" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1087" end="1098" line="25" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1630" end="1670" line="37" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="645" end="709" line="17" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1956" end="1985" line="46" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="269" end="471" line="9" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="948" end="959" line="22" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1079" end="1145" line="25" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1087" end="1144" line="25" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1726" end="1753" line="39" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="768" end="815" line="19" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="528" end="573" line="14" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1016" end="1027" line="24" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="498" end="521" line="13" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="736" end="761" line="18" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1445" end="1460" line="33" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1991" end="2057" line="47" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="776" end="786" line="19" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="2133" end="2133" line="50" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1008" end="1073" line="24" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="536" end="546" line="14" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="&lt;empty&gt;" class="Main" class-type="Object" full-class-name="Main" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\Main.scala" method="main" start="1638" end="1669" line="37" branch="false" invocation-count="0" ignored="false">
+</statement>
+                            </statements>
+</method>
+                    </methods>
+</class>
+            </classes>
+        </package>
+        <package name="best_practices" statement-count="16" statements-invoked="2" statement-rate="12.50">
+            <classes>
+                <class 
+                name="best_practices.ImmutableVariables" filename="best_practices\ImmutableVariables.scala" statement-count="2" statements-invoked="2" statement-rate="100.00" branch-rate="100.00">
+                    <methods>
+                        <method 
+                        name="best_practices/ImmutableVariables/&lt;none&gt;" statement-count="1" statements-invoked="1" statement-rate="100.00" branch-rate="100.00">
+                            <statements>
+                                <statement 
+                                package="best_practices" class="ImmutableVariables" class-type="Object" full-class-name="best_practices.ImmutableVariables" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\best_practices\ImmutableVariables.scala" method="&lt;none&gt;" start="277" end="278" line="13" branch="false" invocation-count="1" ignored="false">
+</statement>
+                            </statements>
+</method>
+                        <method 
+                        name="best_practices/ImmutableVariables/foo" statement-count="1" statements-invoked="1" statement-rate="100.00" branch-rate="100.00">
+                            <statements>
+                                <statement 
+                                package="best_practices" class="ImmutableVariables" class-type="Object" full-class-name="best_practices.ImmutableVariables" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\best_practices\ImmutableVariables.scala" method="foo" start="320" end="325" line="15" branch="false" invocation-count="1" ignored="false">
+</statement>
+                            </statements>
+</method>
+                    </methods>
+</class>
+                <class 
+                name="best_practices.MutableVariables" filename="best_practices\MutableVariables.scala" statement-count="9" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                    <methods>
+                        <method 
+                        name="best_practices/MutableVariables/sum" statement-count="3" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                            <statements>
+                                <statement 
+                                package="best_practices" class="MutableVariables" class-type="Object" full-class-name="best_practices.MutableVariables" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\best_practices\MutableVariables.scala" method="sum" start="519" end="540" line="27" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="best_practices" class="MutableVariables" class-type="Object" full-class-name="best_practices.MutableVariables" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\best_practices\MutableVariables.scala" method="sum" start="534" end="540" line="27" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="best_practices" class="MutableVariables" class-type="Object" full-class-name="best_practices.MutableVariables" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\best_practices\MutableVariables.scala" method="sum" start="512" end="513" line="26" branch="false" invocation-count="0" ignored="false">
+</statement>
+                            </statements>
+</method>
+                        <method 
+                        name="best_practices/MutableVariables/&lt;none&gt;" statement-count="1" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                            <statements>
+                                <statement 
+                                package="best_practices" class="MutableVariables" class-type="Object" full-class-name="best_practices.MutableVariables" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\best_practices\MutableVariables.scala" method="&lt;none&gt;" start="251" end="252" line="13" branch="false" invocation-count="0" ignored="false">
+</statement>
+                            </statements>
+</method>
+                        <method 
+                        name="best_practices/MutableVariables/sum2" statement-count="2" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                            <statements>
+                                <statement 
+                                package="best_practices" class="MutableVariables" class-type="Object" full-class-name="best_practices.MutableVariables" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\best_practices\MutableVariables.scala" method="sum2" start="737" end="745" line="37" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="best_practices" class="MutableVariables" class-type="Object" full-class-name="best_practices.MutableVariables" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\best_practices\MutableVariables.scala" method="sum2" start="742" end="742" line="37" branch="false" invocation-count="0" ignored="false">
+</statement>
+                            </statements>
+</method>
+                        <method 
+                        name="best_practices/MutableVariables/foo" statement-count="3" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                            <statements>
+                                <statement 
+                                package="best_practices" class="MutableVariables" class-type="Object" full-class-name="best_practices.MutableVariables" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\best_practices\MutableVariables.scala" method="foo" start="298" end="299" line="16" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="best_practices" class="MutableVariables" class-type="Object" full-class-name="best_practices.MutableVariables" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\best_practices\MutableVariables.scala" method="foo" start="286" end="292" line="15" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="best_practices" class="MutableVariables" class-type="Object" full-class-name="best_practices.MutableVariables" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\best_practices\MutableVariables.scala" method="foo" start="286" end="292" line="15" branch="false" invocation-count="0" ignored="false">
+</statement>
+                            </statements>
+</method>
+                    </methods>
+</class>
+                <class 
+                name="best_practices.UseOption" filename="best_practices\UseOption.scala" statement-count="4" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                    <methods>
+                        <method 
+                        name="best_practices/UseOption/toMyDouble" statement-count="4" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                            <statements>
+                                <statement 
+                                package="best_practices" class="UseOption" class-type="Object" full-class-name="best_practices.UseOption" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\best_practices\UseOption.scala" method="toMyDouble" start="112" end="128" line="6" branch="true" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="best_practices" class="UseOption" class-type="Object" full-class-name="best_practices.UseOption" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\best_practices\UseOption.scala" method="toMyDouble" start="112" end="128" line="6" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="best_practices" class="UseOption" class-type="Object" full-class-name="best_practices.UseOption" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\best_practices\UseOption.scala" method="toMyDouble" start="172" end="176" line="8" branch="false" invocation-count="0" ignored="false">
+</statement>
+                                <statement 
+                                package="best_practices" class="UseOption" class-type="Object" full-class-name="best_practices.UseOption" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\best_practices\UseOption.scala" method="toMyDouble" start="117" end="127" line="6" branch="false" invocation-count="0" ignored="false">
+</statement>
+                            </statements>
+</method>
+                    </methods>
+</class>
+                <class 
+                name="best_practices.NotUsingNulls" filename="best_practices\NotUsingNulls.scala" statement-count="1" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                    <methods>
+                        <method 
+                        name="best_practices/NotUsingNulls/&lt;none&gt;" statement-count="1" statements-invoked="0" statement-rate="0.00" branch-rate="0.00">
+                            <statements>
+                                <statement 
+                                package="best_practices" class="NotUsingNulls" class-type="Object" full-class-name="best_practices.NotUsingNulls" source="D:\Mgr\Do trzech razy sztuka\Repo\mgr-s22220\s22220-mgr-Oskar-Gasior\src\main\scala\best_practices\NotUsingNulls.scala" method="&lt;none&gt;" start="68" end="72" line="4" branch="false" invocation-count="0" ignored="false">
+</statement>
+                            </statements>
+</method>
+                    </methods>
+</class>
+            </classes>
+        </package>
+    </packages>
+</scoverage>

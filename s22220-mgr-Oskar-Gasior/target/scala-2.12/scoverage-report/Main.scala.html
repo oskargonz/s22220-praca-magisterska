@@ -1,0 +1,1029 @@
+<html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title id="title">
+          Main.scala.html
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.20.1/css/theme.default.min.css" type="text/css"/><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.20.1/js/jquery.tablesorter.min.js"></script><link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" type="text/css"/><script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script><script type="text/javascript">
+        $(document).ready(function() {$(".tablesorter").tablesorter();});
+      </script>
+        <style>
+          table.codegrid { font-family: monospace; font-size: 12px; width: auto!important; }table.statementlist { width: auto!important; font-size: 13px; } table.codegrid td { padding: 0!important; border: 0!important } table td.linenumber { width: 40px!important; } 
+        </style>
+      </head>
+      <body style="font-family: monospace;">
+        <ul class="nav nav-tabs">
+          <li>
+            <a href="#codegrid" data-toggle="tab">Codegrid</a>
+          </li>
+          <li>
+            <a href="#statementlist" data-toggle="tab">Statement List</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="codegrid">
+            <pre style='font-size: 12pt; font-family: courier, monospace;'>1 <span style=''>import best_practices.{ImmutableVariables, MutableVariables, NotUsingNulls, UseOption}
+</span>2 <span style=''>import jdk.internal.org.objectweb.asm.util.Printer
+</span>3 <span style=''>
+</span>4 <span style=''>object Main {
+</span>5 <span style=''>  def main(args: Array[String]): Unit = {
+</span>6 <span style=''>
+</span>7 <span style=''>
+</span>8 <span style=''>    /** Example showing problems with mutable variables. */
+</span>9 <span style=''>    </span><span style='background: #F0ADAD'>println(
+</span>10 <span style=''></span><span style='background: #F0ADAD'>      &quot;\n___________________________________________________&quot; +
+</span>11 <span style=''></span><span style='background: #F0ADAD'>      &quot;\n1. Example showing problems with mutable variables:&quot; +
+</span>12 <span style=''></span><span style='background: #F0ADAD'>      &quot;\n---------------------------------------------------&quot;)</span><span style=''>
+</span>13 <span style=''>    </span><span style='background: #F0ADAD'>println(&quot;foo(1): &quot; + MutableVariables.foo(1))</span><span style=''>
+</span>14 <span style=''>    </span><span style='background: #F0ADAD'>println(&quot;foo(1): &quot; + MutableVariables.foo(1))</span><span style=''>
+</span>15 <span style=''>
+</span>16 <span style=''>    /** Better implementation of above problem without var. */
+</span>17 <span style=''>    </span><span style='background: #F0ADAD'>println(&quot;\nBetter implementation of above problem without var:&quot;)</span><span style=''>
+</span>18 <span style=''>    </span><span style='background: #F0ADAD'>println(&quot;foo(1): &quot; + ImmutableVariables.foo(1))</span><span style=''>
+</span>19 <span style=''>    </span><span style='background: #F0ADAD'>println(&quot;foo(1): &quot; + ImmutableVariables.foo(1))</span><span style=''>
+</span>20 <span style=''>
+</span>21 <span style=''>    /** Mutable variables - example where using of mutable variables is acceptable */
+</span>22 <span style=''>    val mutableVariablesList: List[Int] = </span><span style='background: #F0ADAD'>List(1,2,3)</span><span style=''>
+</span>23 <span style=''>    </span><span style='background: #F0ADAD'>println(&quot;\nException from the rule:&quot;)</span><span style=''>
+</span>24 <span style=''>    </span><span style='background: #F0ADAD'>println(&quot;sum(x):  &quot; + MutableVariables.sum(mutableVariablesList))</span><span style=''>
+</span>25 <span style=''>    </span><span style='background: #F0ADAD'>println(&quot;sum2(x): &quot; + MutableVariables.sum2(mutableVariablesList))</span><span style=''>
+</span>26 <span style=''>
+</span>27 <span style=''>    /** A problem with nulls. */
+</span>28 <span style=''>    </span><span style='background: #F0ADAD'>println(
+</span>29 <span style=''></span><span style='background: #F0ADAD'>        &quot;\n_______________________&quot; +
+</span>30 <span style=''></span><span style='background: #F0ADAD'>        &quot;\n2. Problem with nulls:&quot; +
+</span>31 <span style=''></span><span style='background: #F0ADAD'>        &quot;\n-----------------------&quot;)</span><span style=''>
+</span>32 <span style=''>    // When defining val null interpreter does not throw any exception that it is not String.
+</span>33 <span style=''>    val notUsingNullsString: String = </span><span style='background: #F0ADAD'>NotUsingNulls.x</span><span style=''>
+</span>34 <span style=''>    // When trying to use a string method &quot;.toLowerCase&quot; there is an NullPointerException.
+</span>35 <span style=''>    </span><span style='background: #F0ADAD'>println(&quot;val of type String: &quot; + notUsingNullsString)</span><span style=''>
+</span>36 <span style=''>    try {
+</span>37 <span style=''>      </span><span style='background: #F0ADAD'>println(notUsingNullsString.toLowerCase)</span><span style=''>
+</span>38 <span style=''>    } catch  {
+</span>39 <span style=''>      case e: NullPointerException =&gt; </span><span style='background: #F0ADAD'>println(&quot;Do not use null.&quot;)</span><span style=''>
+</span>40 <span style=''>    }
+</span>41 <span style=''>
+</span>42 <span style=''>    /**
+</span>43 <span style=''>     * Option usage.
+</span>44 <span style=''>     * In below example I compared parsing String to Double directly from String and via Option.
+</span>45 <span style=''>     * */
+</span>46 <span style=''>    val parseStringToDoubleOption: Option[Double] = </span><span style='background: #F0ADAD'>UseOption.toMyDouble(&quot;1.a23&quot;)</span><span style=''>
+</span>47 <span style=''>    </span><span style='background: #F0ADAD'>println(parseStringToDoubleOption.getOrElse(&quot;It's not a Double.&quot;))</span><span style=''>
+</span>48 <span style=''>    try {
+</span>49 <span style=''>      </span><span style='background: #F0ADAD'>val parseStringToDouble: Double = &quot;1.as23&quot;.toDouble</span><span style=''>
+</span>50 <span style=''>    } catch {
+</span>51 <span style=''>      case e: NumberFormatException =&gt; </span><span style='background: #F0ADAD'>println(&quot;It's not a Double.&quot;)</span><span style=''>
+</span>52 <span style=''>    }
+</span>53 <span style=''>
+</span>54 <span style=''>
+</span>55 <span style=''>
+</span>56 <span style=''>
+</span>57 <span style=''>
+</span>58 <span style=''>
+</span>59 <span style=''>
+</span>60 <span style=''>  }
+</span>61 <span style=''>}
+</span></pre>
+          </div>
+          <div class="tab-pane" id="statementlist">
+            <table cellspacing="0" cellpadding="0" class="table statementlist">
+      <tr>
+        <th>Line</th>
+        <th>Stmt Id</th>
+        <th>Pos</th>
+        <th>Tree</th>
+        <th>Symbol</th>
+        <th>Code</th>
+      </tr><tr>
+        <td>
+          9
+        </td>
+        <td>
+          1
+        </td>
+        <td>
+          269
+          -
+          471
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(&quot;\n___________________________________________________\n1. Example showing problems with mutable variables:\n---------------------------------------------------&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          13
+        </td>
+        <td>
+          2
+        </td>
+        <td>
+          485
+          -
+          495
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;foo(1): &quot;
+        </td>
+      </tr><tr>
+        <td>
+          13
+        </td>
+        <td>
+          5
+        </td>
+        <td>
+          477
+          -
+          522
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(&quot;foo(1): &quot;.+(best_practices.MutableVariables.foo(1)))
+        </td>
+      </tr><tr>
+        <td>
+          13
+        </td>
+        <td>
+          4
+        </td>
+        <td>
+          485
+          -
+          521
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.String.+
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;foo(1): &quot;.+(best_practices.MutableVariables.foo(1))
+        </td>
+      </tr><tr>
+        <td>
+          13
+        </td>
+        <td>
+          3
+        </td>
+        <td>
+          498
+          -
+          521
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          best_practices.MutableVariables.foo
+        </td>
+        <td style="background: #F0ADAD">
+          best_practices.MutableVariables.foo(1)
+        </td>
+      </tr><tr>
+        <td>
+          14
+        </td>
+        <td>
+          8
+        </td>
+        <td>
+          536
+          -
+          572
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.String.+
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;foo(1): &quot;.+(best_practices.MutableVariables.foo(1))
+        </td>
+      </tr><tr>
+        <td>
+          14
+        </td>
+        <td>
+          7
+        </td>
+        <td>
+          549
+          -
+          572
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          best_practices.MutableVariables.foo
+        </td>
+        <td style="background: #F0ADAD">
+          best_practices.MutableVariables.foo(1)
+        </td>
+      </tr><tr>
+        <td>
+          14
+        </td>
+        <td>
+          9
+        </td>
+        <td>
+          528
+          -
+          573
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(&quot;foo(1): &quot;.+(best_practices.MutableVariables.foo(1)))
+        </td>
+      </tr><tr>
+        <td>
+          14
+        </td>
+        <td>
+          6
+        </td>
+        <td>
+          536
+          -
+          546
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;foo(1): &quot;
+        </td>
+      </tr><tr>
+        <td>
+          17
+        </td>
+        <td>
+          10
+        </td>
+        <td>
+          645
+          -
+          709
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(&quot;\nBetter implementation of above problem without var:&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          18
+        </td>
+        <td>
+          11
+        </td>
+        <td>
+          723
+          -
+          733
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;foo(1): &quot;
+        </td>
+      </tr><tr>
+        <td>
+          18
+        </td>
+        <td>
+          14
+        </td>
+        <td>
+          715
+          -
+          762
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(&quot;foo(1): &quot;.+(best_practices.ImmutableVariables.foo(1)))
+        </td>
+      </tr><tr>
+        <td>
+          18
+        </td>
+        <td>
+          13
+        </td>
+        <td>
+          723
+          -
+          761
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.String.+
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;foo(1): &quot;.+(best_practices.ImmutableVariables.foo(1))
+        </td>
+      </tr><tr>
+        <td>
+          18
+        </td>
+        <td>
+          12
+        </td>
+        <td>
+          736
+          -
+          761
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          best_practices.ImmutableVariables.foo
+        </td>
+        <td style="background: #F0ADAD">
+          best_practices.ImmutableVariables.foo(1)
+        </td>
+      </tr><tr>
+        <td>
+          19
+        </td>
+        <td>
+          17
+        </td>
+        <td>
+          776
+          -
+          814
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.String.+
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;foo(1): &quot;.+(best_practices.ImmutableVariables.foo(1))
+        </td>
+      </tr><tr>
+        <td>
+          19
+        </td>
+        <td>
+          16
+        </td>
+        <td>
+          789
+          -
+          814
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          best_practices.ImmutableVariables.foo
+        </td>
+        <td style="background: #F0ADAD">
+          best_practices.ImmutableVariables.foo(1)
+        </td>
+      </tr><tr>
+        <td>
+          19
+        </td>
+        <td>
+          18
+        </td>
+        <td>
+          768
+          -
+          815
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(&quot;foo(1): &quot;.+(best_practices.ImmutableVariables.foo(1)))
+        </td>
+      </tr><tr>
+        <td>
+          19
+        </td>
+        <td>
+          15
+        </td>
+        <td>
+          776
+          -
+          786
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;foo(1): &quot;
+        </td>
+      </tr><tr>
+        <td>
+          22
+        </td>
+        <td>
+          19
+        </td>
+        <td>
+          948
+          -
+          959
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.immutable.List.apply
+        </td>
+        <td style="background: #F0ADAD">
+          scala.collection.immutable.List.apply[Int](1, 2, 3)
+        </td>
+      </tr><tr>
+        <td>
+          23
+        </td>
+        <td>
+          20
+        </td>
+        <td>
+          965
+          -
+          1002
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(&quot;\nException from the rule:&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          24
+        </td>
+        <td>
+          23
+        </td>
+        <td>
+          1016
+          -
+          1072
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.String.+
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;sum(x):  &quot;.+(best_practices.MutableVariables.sum(mutableVariablesList))
+        </td>
+      </tr><tr>
+        <td>
+          24
+        </td>
+        <td>
+          22
+        </td>
+        <td>
+          1030
+          -
+          1072
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          best_practices.MutableVariables.sum
+        </td>
+        <td style="background: #F0ADAD">
+          best_practices.MutableVariables.sum(mutableVariablesList)
+        </td>
+      </tr><tr>
+        <td>
+          24
+        </td>
+        <td>
+          21
+        </td>
+        <td>
+          1016
+          -
+          1027
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;sum(x):  &quot;
+        </td>
+      </tr><tr>
+        <td>
+          24
+        </td>
+        <td>
+          24
+        </td>
+        <td>
+          1008
+          -
+          1073
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(&quot;sum(x):  &quot;.+(best_practices.MutableVariables.sum(mutableVariablesList)))
+        </td>
+      </tr><tr>
+        <td>
+          25
+        </td>
+        <td>
+          26
+        </td>
+        <td>
+          1101
+          -
+          1144
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          best_practices.MutableVariables.sum2
+        </td>
+        <td style="background: #F0ADAD">
+          best_practices.MutableVariables.sum2(mutableVariablesList)
+        </td>
+      </tr><tr>
+        <td>
+          25
+        </td>
+        <td>
+          25
+        </td>
+        <td>
+          1087
+          -
+          1098
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;sum2(x): &quot;
+        </td>
+      </tr><tr>
+        <td>
+          25
+        </td>
+        <td>
+          28
+        </td>
+        <td>
+          1079
+          -
+          1145
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(&quot;sum2(x): &quot;.+(best_practices.MutableVariables.sum2(mutableVariablesList)))
+        </td>
+      </tr><tr>
+        <td>
+          25
+        </td>
+        <td>
+          27
+        </td>
+        <td>
+          1087
+          -
+          1144
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.String.+
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;sum2(x): &quot;.+(best_practices.MutableVariables.sum2(mutableVariablesList))
+        </td>
+      </tr><tr>
+        <td>
+          28
+        </td>
+        <td>
+          29
+        </td>
+        <td>
+          1187
+          -
+          1310
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(&quot;\n_______________________\n2. Problem with nulls:\n-----------------------&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          33
+        </td>
+        <td>
+          30
+        </td>
+        <td>
+          1445
+          -
+          1460
+        </td>
+        <td>
+          Select
+        </td>
+        <td>
+          best_practices.NotUsingNulls.x
+        </td>
+        <td style="background: #F0ADAD">
+          best_practices.NotUsingNulls.x
+        </td>
+      </tr><tr>
+        <td>
+          35
+        </td>
+        <td>
+          32
+        </td>
+        <td>
+          1558
+          -
+          1611
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(&quot;val of type String: &quot;.+(notUsingNullsString))
+        </td>
+      </tr><tr>
+        <td>
+          35
+        </td>
+        <td>
+          31
+        </td>
+        <td>
+          1566
+          -
+          1610
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.String.+
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;val of type String: &quot;.+(notUsingNullsString)
+        </td>
+      </tr><tr>
+        <td>
+          37
+        </td>
+        <td>
+          35
+        </td>
+        <td>
+          1630
+          -
+          1670
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(notUsingNullsString.toLowerCase())
+        </td>
+      </tr><tr>
+        <td>
+          37
+        </td>
+        <td>
+          34
+        </td>
+        <td>
+          1630
+          -
+          1670
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(notUsingNullsString.toLowerCase())
+        </td>
+      </tr><tr>
+        <td>
+          37
+        </td>
+        <td>
+          33
+        </td>
+        <td>
+          1638
+          -
+          1669
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.String.toLowerCase
+        </td>
+        <td style="background: #F0ADAD">
+          notUsingNullsString.toLowerCase()
+        </td>
+      </tr><tr>
+        <td>
+          39
+        </td>
+        <td>
+          36
+        </td>
+        <td>
+          1726
+          -
+          1753
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(&quot;Do not use null.&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          46
+        </td>
+        <td>
+          37
+        </td>
+        <td>
+          1956
+          -
+          1985
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          best_practices.UseOption.toMyDouble
+        </td>
+        <td style="background: #F0ADAD">
+          best_practices.UseOption.toMyDouble(&quot;1.a23&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          47
+        </td>
+        <td>
+          38
+        </td>
+        <td>
+          1999
+          -
+          2056
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Option.getOrElse
+        </td>
+        <td style="background: #F0ADAD">
+          parseStringToDoubleOption.getOrElse[Any](&quot;It\'s not a Double.&quot;)
+        </td>
+      </tr><tr>
+        <td>
+          47
+        </td>
+        <td>
+          39
+        </td>
+        <td>
+          1991
+          -
+          2057
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(parseStringToDoubleOption.getOrElse[Any](&quot;It\'s not a Double.&quot;))
+        </td>
+      </tr><tr>
+        <td>
+          48
+        </td>
+        <td>
+          43
+        </td>
+        <td>
+          2076
+          -
+          2127
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          {
+  val parseStringToDouble: Double = scala.Predef.augmentString(&quot;1.as23&quot;).toDouble;
+  ()
+}
+        </td>
+      </tr><tr>
+        <td>
+          49
+        </td>
+        <td>
+          41
+        </td>
+        <td>
+          2110
+          -
+          2127
+        </td>
+        <td>
+          Select
+        </td>
+        <td>
+          scala.collection.immutable.StringLike.toDouble
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.augmentString(&quot;1.as23&quot;).toDouble
+        </td>
+      </tr><tr>
+        <td>
+          49
+        </td>
+        <td>
+          40
+        </td>
+        <td>
+          2110
+          -
+          2118
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          &quot;1.as23&quot;
+        </td>
+      </tr><tr>
+        <td>
+          50
+        </td>
+        <td>
+          42
+        </td>
+        <td>
+          2133
+          -
+          2133
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          ()
+        </td>
+      </tr><tr>
+        <td>
+          51
+        </td>
+        <td>
+          44
+        </td>
+        <td>
+          2183
+          -
+          2212
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Predef.println
+        </td>
+        <td style="background: #F0ADAD">
+          scala.Predef.println(&quot;It\'s not a Double.&quot;)
+        </td>
+      </tr>
+    </table>
+          </div>
+        </div>
+      </body>
+    </html>

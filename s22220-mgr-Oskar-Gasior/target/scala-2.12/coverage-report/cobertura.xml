@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage 
+line-rate="0.03" lines-valid="60" lines-covered="2" branches-valid="3" branches-covered="0" branch-rate="0.00" complexity="0" version="1.0" timestamp="1649958819518">
+    <sources>
+        <source>--source</source>
+        <source>D:/Mgr/Do trzech razy sztuka/Repo/mgr-s22220/s22220-mgr-Oskar-Gasior/src/main/scala</source>
+    </sources>
+    <packages>
+        <package name="&lt;empty&gt;" line-rate="0.00" branch-rate="0.00" complexity="0">
+            <classes>
+                <class name="Main" filename="Main.scala" line-rate="0.00" branch-rate="0.00" complexity="0">
+                    <methods>
+                        <method name="&lt;empty&gt;/Main/main" signature="()V" line-rate="0.00" branch-rate="0.00" complexity="0">
+                            <lines>
+                                <line number="24" hits="0" branch="false"/>
+                                <line number="35" hits="0" branch="false"/>
+                                <line number="49" hits="0" branch="false"/>
+                                <line number="19" hits="0" branch="false"/>
+                                <line number="14" hits="0" branch="false"/>
+                                <line number="37" hits="0" branch="false"/>
+                                <line number="51" hits="0" branch="false"/>
+                                <line number="25" hits="0" branch="false"/>
+                                <line number="18" hits="0" branch="false"/>
+                                <line number="28" hits="0" branch="false"/>
+                                <line number="47" hits="0" branch="false"/>
+                                <line number="23" hits="0" branch="false"/>
+                                <line number="13" hits="0" branch="false"/>
+                                <line number="13" hits="0" branch="false"/>
+                                <line number="18" hits="0" branch="false"/>
+                                <line number="49" hits="0" branch="false"/>
+                                <line number="13" hits="0" branch="false"/>
+                                <line number="18" hits="0" branch="false"/>
+                                <line number="24" hits="0" branch="false"/>
+                                <line number="35" hits="0" branch="false"/>
+                                <line number="19" hits="0" branch="false"/>
+                                <line number="14" hits="0" branch="false"/>
+                                <line number="48" hits="0" branch="false"/>
+                                <line number="25" hits="0" branch="false"/>
+                                <line number="37" hits="0" branch="false"/>
+                                <line number="17" hits="0" branch="false"/>
+                                <line number="46" hits="0" branch="false"/>
+                                <line number="9" hits="0" branch="false"/>
+                                <line number="22" hits="0" branch="false"/>
+                                <line number="25" hits="0" branch="false"/>
+                                <line number="25" hits="0" branch="false"/>
+                                <line number="39" hits="0" branch="false"/>
+                                <line number="19" hits="0" branch="false"/>
+                                <line number="14" hits="0" branch="false"/>
+                                <line number="24" hits="0" branch="false"/>
+                                <line number="13" hits="0" branch="false"/>
+                                <line number="18" hits="0" branch="false"/>
+                                <line number="33" hits="0" branch="false"/>
+                                <line number="47" hits="0" branch="false"/>
+                                <line number="19" hits="0" branch="false"/>
+                                <line number="50" hits="0" branch="false"/>
+                                <line number="24" hits="0" branch="false"/>
+                                <line number="14" hits="0" branch="false"/>
+                                <line number="37" hits="0" branch="false"/>
+                            </lines>
+                        </method>
+                    </methods>
+                    <lines>
+                        <line number="24" hits="0" branch="false"/>
+                        <line number="35" hits="0" branch="false"/>
+                        <line number="49" hits="0" branch="false"/>
+                        <line number="19" hits="0" branch="false"/>
+                        <line number="14" hits="0" branch="false"/>
+                        <line number="37" hits="0" branch="false"/>
+                        <line number="51" hits="0" branch="false"/>
+                        <line number="25" hits="0" branch="false"/>
+                        <line number="18" hits="0" branch="false"/>
+                        <line number="28" hits="0" branch="false"/>
+                        <line number="47" hits="0" branch="false"/>
+                        <line number="23" hits="0" branch="false"/>
+                        <line number="13" hits="0" branch="false"/>
+                        <line number="13" hits="0" branch="false"/>
+                        <line number="18" hits="0" branch="false"/>
+                        <line number="49" hits="0" branch="false"/>
+                        <line number="13" hits="0" branch="false"/>
+                        <line number="18" hits="0" branch="false"/>
+                        <line number="24" hits="0" branch="false"/>
+                        <line number="35" hits="0" branch="false"/>
+                        <line number="19" hits="0" branch="false"/>
+                        <line number="14" hits="0" branch="false"/>
+                        <line number="48" hits="0" branch="false"/>
+                        <line number="25" hits="0" branch="false"/>
+                        <line number="37" hits="0" branch="false"/>
+                        <line number="17" hits="0" branch="false"/>
+                        <line number="46" hits="0" branch="false"/>
+                        <line number="9" hits="0" branch="false"/>
+                        <line number="22" hits="0" branch="false"/>
+                        <line number="25" hits="0" branch="false"/>
+                        <line number="25" hits="0" branch="false"/>
+                        <line number="39" hits="0" branch="false"/>
+                        <line number="19" hits="0" branch="false"/>
+                        <line number="14" hits="0" branch="false"/>
+                        <line number="24" hits="0" branch="false"/>
+                        <line number="13" hits="0" branch="false"/>
+                        <line number="18" hits="0" branch="false"/>
+                        <line number="33" hits="0" branch="false"/>
+                        <line number="47" hits="0" branch="false"/>
+                        <line number="19" hits="0" branch="false"/>
+                        <line number="50" hits="0" branch="false"/>
+                        <line number="24" hits="0" branch="false"/>
+                        <line number="14" hits="0" branch="false"/>
+                        <line number="37" hits="0" branch="false"/>
+                    </lines>
+                </class>
+            </classes>
+        </package>
+        <package name="best_practices" line-rate="0.12" branch-rate="0.00" complexity="0">
+            <classes>
+                <class 
+                name="best_practices.ImmutableVariables" filename="best_practices/ImmutableVariables.scala" line-rate="1.00" branch-rate="1.00" complexity="0">
+                    <methods>
+                        <method 
+                        name="best_practices/ImmutableVariables/&lt;none&gt;" signature="()V" line-rate="1.00" branch-rate="1.00" complexity="0">
+                            <lines>
+                                <line number="13" hits="1" branch="false"/>
+                            </lines>
+</method>
+                        <method 
+                        name="best_practices/ImmutableVariables/foo" signature="()V" line-rate="1.00" branch-rate="1.00" complexity="0">
+                            <lines>
+                                <line number="15" hits="1" branch="false"/>
+                            </lines>
+</method>
+                    </methods>
+                    <lines>
+                        <line number="15" hits="1" branch="false"/>
+                        <line number="13" hits="1" branch="false"/>
+                    </lines>
+</class>
+                <class 
+                name="best_practices.MutableVariables" filename="best_practices/MutableVariables.scala" line-rate="0.00" branch-rate="0.00" complexity="0">
+                    <methods>
+                        <method name="best_practices/MutableVariables/sum" signature="()V" line-rate="0.00" branch-rate="0.00" complexity="0">
+                            <lines>
+                                <line number="27" hits="0" branch="false"/>
+                                <line number="27" hits="0" branch="false"/>
+                                <line number="26" hits="0" branch="false"/>
+                            </lines>
+                        </method>
+                        <method 
+                        name="best_practices/MutableVariables/&lt;none&gt;" signature="()V" line-rate="0.00" branch-rate="0.00" complexity="0">
+                            <lines>
+                                <line number="13" hits="0" branch="false"/>
+                            </lines>
+</method>
+                        <method name="best_practices/MutableVariables/sum2" signature="()V" line-rate="0.00" branch-rate="0.00" complexity="0">
+                            <lines>
+                                <line number="37" hits="0" branch="false"/>
+                                <line number="37" hits="0" branch="false"/>
+                            </lines>
+                        </method>
+                        <method name="best_practices/MutableVariables/foo" signature="()V" line-rate="0.00" branch-rate="0.00" complexity="0">
+                            <lines>
+                                <line number="16" hits="0" branch="false"/>
+                                <line number="15" hits="0" branch="false"/>
+                                <line number="15" hits="0" branch="false"/>
+                            </lines>
+                        </method>
+                    </methods>
+                    <lines>
+                        <line number="16" hits="0" branch="false"/>
+                        <line number="27" hits="0" branch="false"/>
+                        <line number="13" hits="0" branch="false"/>
+                        <line number="37" hits="0" branch="false"/>
+                        <line number="15" hits="0" branch="false"/>
+                        <line number="27" hits="0" branch="false"/>
+                        <line number="37" hits="0" branch="false"/>
+                        <line number="15" hits="0" branch="false"/>
+                        <line number="26" hits="0" branch="false"/>
+                    </lines>
+</class>
+                <class 
+                name="best_practices.UseOption" filename="best_practices/UseOption.scala" line-rate="0.00" branch-rate="0.00" complexity="0">
+                    <methods>
+                        <method name="best_practices/UseOption/toMyDouble" signature="()V" line-rate="0.00" branch-rate="0.00" complexity="0">
+                            <lines>
+                                <line number="6" hits="0" branch="false"/>
+                                <line number="6" hits="0" branch="false"/>
+                                <line number="8" hits="0" branch="false"/>
+                                <line number="6" hits="0" branch="false"/>
+                            </lines>
+                        </method>
+                    </methods>
+                    <lines>
+                        <line number="6" hits="0" branch="false"/>
+                        <line number="6" hits="0" branch="false"/>
+                        <line number="8" hits="0" branch="false"/>
+                        <line number="6" hits="0" branch="false"/>
+                    </lines>
+</class>
+                <class 
+                name="best_practices.NotUsingNulls" filename="best_practices/NotUsingNulls.scala" line-rate="0.00" branch-rate="0.00" complexity="0">
+                    <methods>
+                        <method 
+                        name="best_practices/NotUsingNulls/&lt;none&gt;" signature="()V" line-rate="0.00" branch-rate="0.00" complexity="0">
+                            <lines>
+                                <line number="4" hits="0" branch="false"/>
+                            </lines>
+</method>
+                    </methods>
+                    <lines>
+                        <line number="4" hits="0" branch="false"/>
+                    </lines>
+</class>
+            </classes>
+        </package>
+    </packages>
+</coverage>
