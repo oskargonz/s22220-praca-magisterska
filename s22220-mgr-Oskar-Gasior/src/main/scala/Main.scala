@@ -1,5 +1,8 @@
+import Other.MyPatternMatching
 import best_practices.{ImmutableVariables, MutableVariables, NotUsingNulls, UseOption}
 import functional_style.{PolymorphicFunctions, Recursion}
+
+import scala.util.control.Exception.allCatch
 //import functional_style.BriefComparison.formatArgsPureFunction
 import functional_style.higher_order_functions.HigherOrderFunctions
 import jdk.internal.org.objectweb.asm.util.Printer
@@ -105,5 +108,18 @@ object Main {
     println("Result of polymorphic function to find index in Array[Int]: " + arrayOfIntPolymorphic)
     println("Result of monomorphic function to find index in Array[String]: " + arrayOfStringMonomorphic)
     println("Result of polymorphic function to find index in Array[String]: " + arrayOfStringPolymorphic)
+
+    val add3Nums: (Int, Int, Int) => Int = (a: Int, b: Int, c: Int) => a + b + c
+    val x: Int => Int = add3Nums(1, _: Int, 2)
+    println(x(3))
+
+
+    // TODO do wrzucenia do obiektu MyPatternMatching i do opisania w wordzie jak to działa
+    def makeInt(s: String): Option[Int] = allCatch.opt(s.trim.toInt)
+    val i = 1
+    makeInt("1") match {
+      case Some(i) => println(i)
+      case None => println("Error: Could not convert String to Int.")}
+
   }
 }
