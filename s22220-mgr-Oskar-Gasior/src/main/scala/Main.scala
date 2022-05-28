@@ -1,20 +1,20 @@
-import Other.MyPatternMatching
 import best_practices.{ImmutableVariables, MutableVariables, NotUsingNulls, UseOption}
+import domain_modeling_options.case_class.{PersonCaseClass, PersonClass}
+import domain_modeling_options.classes.{UserDefault, UserVal, UserVar}
+import domain_modeling_options.companion_object.Kid
+import domain_modeling_options.objects.UserObject.newID
+import domain_modeling_options.objects.{UserClass, UserObject}
 import functional_style.{PolymorphicFunctions, Recursion}
-
-import scala.util.control.Exception.allCatch
-//import functional_style.BriefComparison.formatArgsPureFunction
 import functional_style.higher_order_functions.HigherOrderFunctions
-import jdk.internal.org.objectweb.asm.util.Printer
 
 object Main {
   def main(args: Array[String]): Unit = {
 
 
-    // Example showing problems with mutable variables.
+    //1.  Example showing problems with mutable variables.
     println(
       "\n___________________________________________________" +
-      "\n1. Example showing problems with mutable variables:" +
+      "\n1. Mutable variables:" +
       "\n---------------------------------------------------")
     println("foo(1): " + MutableVariables.foo(1))
     println("foo(1): " + MutableVariables.foo(1))
@@ -30,7 +30,7 @@ object Main {
     println("sum(x):  " + MutableVariables.sum(mutableVariablesList))
     println("sum2(x): " + MutableVariables.sum2(mutableVariablesList))
 
-    // Problem with nulls.
+    // 2. Problem with nulls.
     println(
         "\n_______________________" +
         "\n2. Problem with nulls:" +
@@ -109,17 +109,124 @@ object Main {
     println("Result of monomorphic function to find index in Array[String]: " + arrayOfStringMonomorphic)
     println("Result of polymorphic function to find index in Array[String]: " + arrayOfStringPolymorphic)
 
-    val add3Nums: (Int, Int, Int) => Int = (a: Int, b: Int, c: Int) => a + b + c
-    val x: Int => Int = add3Nums(1, _: Int, 2)
-    println(x(3))
+
+    // Classes constructor
+    println(
+      "\n_______________________" +
+        "\n6. Classes:" +
+        "\n-----------------------")
+    val userDefault = new UserDefault("John", "Smith")
+    val userVar = new UserVar("John", "Smith")
+    val userVal = new UserVal("John", "Smith")
+
+    // userVar has vars in constructor parameters. That is why it is possible to get the parameter and modify it.
+    println("\nuserVar.name: " + userVar.name)
+    userVar.name = "Matt"
+    println("userVar.name after modification: " + userVar.name)
+
+    // userVal has vals in constructor parameters. That is why it is possible to get the parameter
+    // but modification is not possible.
+    println("\nuserVal.name: " + userVal.name)
+    // userVal.name = "Oskar"
+    // Output (Error): reassignment to val
+    //                     userVal.name = "Oskar"
+
+    println("Default primary constructor: ")
+    // It is not possible to get or set constructor parameters as they are private. It is only possible to run the method.
+    userDefault.printEmployeeInfo()
+
+    // Case Classes
+    println(
+      "\n_______________________" +
+        "\n7. Case Classes:" +
+        "\n-----------------------")
+    println()
+    val personCaseClass = PersonCaseClass("John", 27)
+    val personClass = new PersonClass("John", 27)
+    println("toString of class:       " + personClass.toString)
+    println("toString of case class:  " + personCaseClass.toString)
+    println("unapply of case class:   " + PersonCaseClass.unapply(personCaseClass).get)
+
+    personCaseClass match {
+      case PersonCaseClass("James", 27) =>
+        // use of unapply in pattern matching
+        println("This person is: " + PersonCaseClass.unapply(personCaseClass).get)
+      case PersonCaseClass(name, age) =>
+        // name and age use unapply method
+        println("This person is: " + name + ", " + age + " years old.")
+      case _ => println("This is not a person!")
+    }
+
+    // Object
+    println(
+      "\n_______________________" +
+        "\n8. Object:" +
+        "\n-----------------------")
+    // Example with singleton
+    // Singleton of object may be confusing as it is possible to create 2 values of object the same as with class.
+    val M: UserClass = new UserClass
+    val N: UserClass = new UserClass
+    val P: UserObject.type = UserObject
+    val Q: UserObject.type = UserObject
+
+    // Running a method on created instances.
+    val m1: Int = M.newID()
+    val n1: Int = N.newID()
+    val p1: Int = P.newID()
+    val q1: Int = Q.newID()
+
+    println("Values created from Class:\nm1: " + m1)
+    println("n1: " + n1)
+    println("Values created from Object:\np1: " + p1)
+    println("q1: " + q1)
+
+    println("\nReferences to instances of Class and Object:")
+    println("M (Class): " + M)
+    println("N (Class): " + N)
+    println("P (Object): " + P)
+    println("Q (Object): " + Q)
+
+    val staticExample: Int = newID()
+    println("\nUse of static method from UserObject: " + staticExample)
+
+    // Companion object
+    println(
+      "\n_______________________" +
+        "\n9. Companion object:" +
+        "\n-----------------------")
+
+    // 3 different instances of Kid
+    val kidClass = new Kid("Adam", 12)
+    val kidCompanionObject = Kid
+    val kidApply = Kid("Natalie", 14)
+
+    println("Copmpanion Class:                " + kidClass)
+    println("Companion object:                " + kidCompanionObject)
+    println("Apply from comapnion object:     " + kidApply)
+
+    println("\nA method from companion class:   " + kidClass.greeting())
+    print("A method from companion object:  ")
+    kidCompanionObject.printFromCompanionObject()
+
+    // Laziness
+    println(
+      "\n_______________________" +
+        "\n10. Laziness:" +
+        "\n-----------------------")
+
+    lazy val lazyEvaluationValue: Int = {
+      println("Lazy evaluation")
+      10
+    }
+    val eagerEvaluationValue: Int = {
+      println("Evaluation")
+      10
+    }
+    val someValue: Int = lazyEvaluationValue
 
 
-    // TODO do wrzucenia do obiektu MyPatternMatching i do opisania w wordzie jak to działa
-    def makeInt(s: String): Option[Int] = allCatch.opt(s.trim.toInt)
-    val i = 1
-    makeInt("1") match {
-      case Some(i) => println(i)
-      case None => println("Error: Could not convert String to Int.")}
+
+
 
   }
 }
