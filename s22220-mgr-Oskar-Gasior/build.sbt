@@ -2,6 +2,7 @@ ThisBuild / version := "0.1.0-SNAPSHOT"
 
 ThisBuild / scalaVersion := "2.12.10"
 val sparkVersion = "3.1.2"
+organization := "org.edu.pjwstk.application"
 
 lazy val root = (project in file("."))
   .settings(
@@ -18,7 +19,6 @@ val testDependencies = Seq(
 )
 
 libraryDependencies ++= testDependencies ++ sparkDependencies
-
 coverageEnabled := true
 coverageMinimum := 0
 coverageFailOnMinimum := true
