@@ -40,7 +40,5 @@ object SimpleTransformations {
 
     // Sorting whole dataframe by value column.
     val sortedColumn = df.sort(col("Value").desc)
-
-
   }
 }
