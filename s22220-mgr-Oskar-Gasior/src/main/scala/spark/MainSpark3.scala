@@ -2,6 +2,7 @@ package spark
 
 import org.apache.log4j.Logger
 import org.apache.spark.SparkConf
+import org.apache.spark.sql.types.DataTypes
 import org.apache.spark.sql.{DataFrame, Dataset, Row, SparkSession}
 
 import java.util.Properties
@@ -26,8 +27,9 @@ object MainSpark3 extends Serializable {
 
     val covidDF: DataFrame = loadDF(spark, args(0))
     val partitionedCovidDF: Dataset[Row] = covidDF.repartition(4)
-    val countTopCountriesDF: DataFrame = SampleTransformations.topCountries(partitionedCovidDF)
+    val countTopCountriesDF: DataFrame = SimpleTransformations.topCountries(partitionedCovidDF)
 
+    SimpleTransformations.basicColumnOperations(covidDF, "Direction")
     // countTopCountriesDF.show(false) // Uncomment this line to see result of topCountries method.
     logger.info(countTopCountriesDF.collect().mkString("->")) // Action
 

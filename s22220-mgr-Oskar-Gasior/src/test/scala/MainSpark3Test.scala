@@ -2,7 +2,7 @@ import org.apache.spark.sql.SparkSession
 import org.scalatest.BeforeAndAfterAll
 import org.scalatest.funsuite.AnyFunSuite
 import spark.MainSpark3.loadDF
-import spark.SampleTransformations
+import spark.SimpleTransformations
 
 import scala.collection.mutable
 
@@ -31,7 +31,7 @@ class MainSpark3Test extends AnyFunSuite with BeforeAndAfterAll{
 
   test("Test 2 - topCountries") {
     val covidDF = loadDF(spark, "data/covid19_data_NZ.csv")
-    val countDF = SampleTransformations.topCountries(covidDF)
+    val countDF = SimpleTransformations.topCountries(covidDF)
     val countryMap = new mutable.HashMap[String, Long]
     countDF.collect().foreach(r => countryMap.put(r.getString(0), r.getLong(1)))
     assert(countryMap("East Asia (excluding China)") == 31)
