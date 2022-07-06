@@ -1,2 +1,5 @@
-22/07/03 21:44:17 INFO MainSpark4$: Starting s22220-mgr application.
-22/07/03 21:44:31 INFO MainSpark4$: Finished s22220-mgr application.
+22/07/06 16:39:18 INFO DatasetsMain$: Starting s22220-mgr application.
+22/07/06 16:39:25 INFO DatasetsMain$: Initial Dataset:
+22/07/06 16:39:26 INFO DatasetsMain$: DataFrame does not apply to given schema.
+22/07/06 16:39:26 INFO DatasetsMain$: Filtered Dataset:
+22/07/06 16:39:26 INFO DatasetsMain$: Double operation on int row:
