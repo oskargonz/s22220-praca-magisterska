@@ -3,6 +3,7 @@ package spark.datasets
 import org.apache.log4j.Logger
 import org.apache.spark.sql.{AnalysisException, DataFrame, Dataset, Row, SparkSession}
 import spark.MainSpark4
+import spark.MainSpark4.logger
 
 
 object DatasetsMain {
@@ -54,8 +55,15 @@ object DatasetsMain {
     val filteredDataset = myDataSet.filter { bs => bs.Hits > 10000 }
     filteredDataset.show()
 
+    // Below filters makes an error.
+    // val filteredDatasetWithError = myDataSet.filter { bs => bs.hits > 10000 }
+    // val filteredDataFrameWithError = myDataFrame.filter("hits > 1000")
+
     logger.info("Double operation on int row:")
     val mappedDataset = myDataSet.map { (func: BlogSchema) => func.Id * 2 }
     mappedDataset.show()
+
+    logger.info("Finished s22220-mgr application.")
+    spark.stop()
   }
 }
