@@ -5,6 +5,7 @@ import org.apache.spark.SparkConf
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.{DataFrame, SparkSession, functions => F}
+import spark.transformations.{Aggregations, ColumnTransformations, Joins, UserDefinedFunction}
 
 import java.util.Properties
 import scala.io.Source
@@ -118,6 +119,12 @@ object MainSpark4 extends Serializable {
     // Uncomment below lines to save output to parquet files.
     // val outputPath = "output"
     // fireDFwithSchema.write.format("parquet").save(outputPath)
+
+    val UDF: Unit = UserDefinedFunction(spark)
+    val columnTransformations: Unit = ColumnTransformations(spark)
+    val aggregations: Unit = Aggregations(spark)
+    val joins: Unit = Joins(spark)
+
 
     logger.info("Finished s22220-mgr application.")
     //scala.io.StdIn.readLine() // Uncomment this line to use Spark Web UI
