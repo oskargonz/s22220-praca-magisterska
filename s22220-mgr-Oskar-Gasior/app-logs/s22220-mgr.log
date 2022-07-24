@@ -1,3 +1,2 @@
-22/07/15 14:12:48 INFO WritingData$: Starting s22220-mgr application.
-22/07/15 14:12:56 INFO WritingData$: Number of partitions in dataSource: 1
-22/07/15 14:12:56 INFO WritingData$: Number of partitions in repartitionedDataSource: 3
+22/07/24 14:02:25 INFO MainSpark4$: Starting s22220-mgr application.
+22/07/24 14:02:45 INFO MainSpark4$: Finished s22220-mgr application.

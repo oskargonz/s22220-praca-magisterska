@@ -1,8 +1,7 @@
 package spark
 
-import org.apache.spark.sql.{Column, DataFrame, functions}
-import org.apache.spark.sql.catalyst.dsl.expressions.{DslExpression, DslSymbol, StringToAttributeConversionHelper}
 import org.apache.spark.sql.functions.{col, concat, expr}
+import org.apache.spark.sql.{Column, DataFrame}
 
 object SimpleTransformations {
   def topCountries(df: DataFrame): DataFrame = {

@@ -46,7 +46,12 @@ object MainSpark4 extends Serializable {
       StructField("Suppression Personnel", IntegerType, nullable = true)
     ))
 
-    // Reading csv to DataFrame with 3 methods:
+    //1.  Reading csv to DataFrame with 3 methods:
+    println(
+      "\n___________________________________________________" +
+        "\n1. Reading csv to DataFrame with 3 methods:" +
+        "\n---------------------------------------------------")
+
     val inputPath = "data/Fire_Incidents.csv"
     val fireDFwithSchema: DataFrame = spark.read.schema(fireSchema)
       .option("header", "true")
@@ -63,7 +68,11 @@ object MainSpark4 extends Serializable {
     println("Datatype with samplingRatio: " + fireDFwithSampleRatio.schema("Incident Number").dataType)
     println("Datatype without schema: " + fireDFwithoutSchema.schema("Incident Number").dataType)
 
-    // Count number of cities
+    println()
+    println(
+      "\n___________________________________________________" +
+        "\n2. Simple transformation on DataFrame. Counting number of cities:" +
+        "\n---------------------------------------------------")
     println("DataFrame contains below number of cities:")
     fireDFwithSchema
       .select("City")
@@ -71,8 +80,11 @@ object MainSpark4 extends Serializable {
       .agg(countDistinct("City") as "DistinctCities")
       .show()
 
-    // Changing the name of column and filtering
-    println("Changing the name of column and filtering: ")
+    println()
+    println(
+      "\n___________________________________________________" +
+        "\n3. Changing the name of column and filtering:" +
+        "\n---------------------------------------------------")
     fireDFwithSchema
       .withColumnRenamed("StationArea", "SmallStationsArea")
       .where(col("StationArea").isNotNull)
@@ -80,7 +92,11 @@ object MainSpark4 extends Serializable {
       .sort(col("StationArea").desc)
       .show(5)
 
-    // Changing a column type
+    println()
+    println(
+      "\n___________________________________________________" +
+        "\n4. Changing a column type:" +
+        "\n---------------------------------------------------")
     val changedColumnTypeDF: DataFrame = fireDFwithoutSchema
       .withColumn("IncidentDate", to_date(col("Incident Date")))
       .drop("Incident Date")
@@ -88,7 +104,11 @@ object MainSpark4 extends Serializable {
     println("Initial datatype: " + fireDFwithoutSchema.schema("Incident Date").dataType)
     println("DataType after change: " + changedColumnTypeDF.schema("IncidentDate").dataType)
 
-    // Date methods
+    println()
+    println(
+      "\n___________________________________________________" +
+        "\n5. Working with Date methods:" +
+        "\n---------------------------------------------------")
     println("Month column was constructed from IncidentDate column.")
     val DfWithMonths = changedColumnTypeDF
       .where(col("IncidentDate").isNotNull)
@@ -108,21 +128,46 @@ object MainSpark4 extends Serializable {
       .orderBy(desc("count"))
       .show()
 
-    // sum, avg, min, max
-    println("Simple calculations on StationArea column:")
+    println()
+    println(
+      "\n___________________________________________________" +
+        "\n6. Sum, avg and min calculations:" +
+        "\n---------------------------------------------------")
     fireDFwithSchema
       .select(F.sum("StationArea"), F.avg("StationArea"),
         F.min("StationArea"), F.max("StationArea"))
       .show(5)
 
-
     // Uncomment below lines to save output to parquet files.
     // val outputPath = "output"
     // fireDFwithSchema.write.format("parquet").save(outputPath)
 
+    println()
+    println(
+      "\n___________________________________________________" +
+        "\n7. UserDefinedFunction:" +
+        "\n---------------------------------------------------")
     val UDF: Unit = UserDefinedFunction(spark)
+
+    println()
+    println(
+      "\n___________________________________________________" +
+        "\n8. columnTransformations:" +
+        "\n---------------------------------------------------")
     val columnTransformations: Unit = ColumnTransformations(spark)
+
+    println()
+    println(
+      "\n___________________________________________________" +
+        "\n9. Aggregations:" +
+        "\n---------------------------------------------------")
     val aggregations: Unit = Aggregations(spark)
+
+    println()
+    println(
+      "\n___________________________________________________" +
+        "\n10. Joins:" +
+        "\n---------------------------------------------------")
     val joins: Unit = Joins(spark)
 
 

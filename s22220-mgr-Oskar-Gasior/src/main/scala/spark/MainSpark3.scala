@@ -2,7 +2,6 @@ package spark
 
 import org.apache.log4j.Logger
 import org.apache.spark.SparkConf
-import org.apache.spark.sql.types.DataTypes
 import org.apache.spark.sql.{DataFrame, Dataset, Row, SparkSession}
 
 import java.util.Properties
